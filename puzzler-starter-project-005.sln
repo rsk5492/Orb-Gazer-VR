@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puzzler-starter-project-005", "puzzler-starter-project-005.csproj", "{6D30C871-D2FA-86B9-499D-E3D2D933CFD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puzzler-starter-project-005.Plugins", "puzzler-starter-project-005.Plugins.csproj", "{C26D992F-F538-6A91-2DFD-15F81D6E4E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puzzler-starter-project-005.Editor", "puzzler-starter-project-005.Editor.csproj", "{A2CC9721-2CC5-9986-B9CC-4412E4A1C4AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D30C871-D2FA-86B9-499D-E3D2D933CFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D30C871-D2FA-86B9-499D-E3D2D933CFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D30C871-D2FA-86B9-499D-E3D2D933CFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D30C871-D2FA-86B9-499D-E3D2D933CFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26D992F-F538-6A91-2DFD-15F81D6E4E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26D992F-F538-6A91-2DFD-15F81D6E4E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26D992F-F538-6A91-2DFD-15F81D6E4E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26D992F-F538-6A91-2DFD-15F81D6E4E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CC9721-2CC5-9986-B9CC-4412E4A1C4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CC9721-2CC5-9986-B9CC-4412E4A1C4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CC9721-2CC5-9986-B9CC-4412E4A1C4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CC9721-2CC5-9986-B9CC-4412E4A1C4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
