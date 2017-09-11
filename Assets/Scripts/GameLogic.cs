@@ -7,6 +7,7 @@ public class GameLogic : MonoBehaviour
     public GameObject player;
     public GameObject eventSystem;
     public GameObject startUI, restartUI;
+    public GameObject chest;
     public GameObject startPoint, playPoint, restartPoint;
     public GameObject[] puzzleSpheres; //An array to hold our puzzle spheres
 
@@ -20,6 +21,7 @@ public class GameLogic : MonoBehaviour
 
     private int currentSolveIndex = 0; //Temporary variable for storing the index that the player is solving for in the pattern.
 
+    public GameObject failAudioHolder;
 
     // Use this for initialization
     void Start()
@@ -104,7 +106,7 @@ public class GameLogic : MonoBehaviour
                 currentlyDisplayingPattern = false; //Let us know were done displaying the pattern
                 currentDisplayIndex = 0;
                 CancelInvoke(); //Stop the pattern display.  May be better to use coroutines for this but oh well
-               // eventSystem.SetActive(true); //Enable gaze input when we aren't displaying the pattern.
+                eventSystem.SetActive(true); //Enable gaze input when we aren't displaying the pattern.
             }
         }
     }
@@ -127,7 +129,7 @@ public class GameLogic : MonoBehaviour
         iTween.MoveTo(player,
             iTween.Hash(
                 "position", startPoint.transform.position,
-                "time", 4,
+                "time", 0,
                 "easetype", "linear",
                 "oncomplete", "resetGame",
                 "oncompletetarget", this.gameObject
@@ -147,7 +149,7 @@ public class GameLogic : MonoBehaviour
     public void puzzleFailure()
     { //Do this when the player gets it wrong
         Debug.Log("You've Failed, Resetting puzzle");
-
+        failAudioHolder.GetComponent<GvrAudioSource>().Play();
         currentSolveIndex = 0;
 
         startPuzzle();
@@ -172,6 +174,8 @@ public class GameLogic : MonoBehaviour
         //this.GetComponent<AudioSource>().Play(); //Play the success audio
         restartUI.SetActive(true);
         playerWon = true;
+        
+        chest.SetActive(true);
 
     }
 
