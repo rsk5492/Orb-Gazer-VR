@@ -6,10 +6,11 @@ public class GameLogic : MonoBehaviour
 
     public GameObject player;
     public GameObject eventSystem;
-    public GameObject startUI, restartUI;
+    public GameObject startUI, restartUI, playUI;
     public GameObject chest;
     public GameObject startPoint, playPoint, restartPoint;
     public GameObject[] puzzleSpheres; //An array to hold our puzzle spheres
+    public GameObject orbs;
 
     public int puzzleLength = 5; //How many times we light up.  This is the difficulty factor.  The longer it is the more you have to memorize in-game.
     public float puzzleSpeed = 1f; //How many seconds between puzzle display pulses
@@ -28,6 +29,7 @@ public class GameLogic : MonoBehaviour
     {
         puzzleOrder = new int[puzzleLength]; //Set the size of our array to the declared puzzle length
         generatePuzzleSequence(); //Generate the puzzle sequence for this playthrough.  
+        startUI.SetActive(true);
     }
 
     // Update is called once per frame
@@ -82,9 +84,21 @@ public class GameLogic : MonoBehaviour
         eventSystem.SetActive(false);
         iTween.MoveTo(player, playPoint.transform.position, 5f);
         CancelInvoke("displayPattern");
-        InvokeRepeating("displayPattern", 3, puzzleSpeed); //Start running through the displaypattern function
-        currentSolveIndex = 0; //Set our puzzle index at 0
+        StartCoroutine(showMessage());
+    }
 
+    IEnumerator showMessage()
+    {
+        yield return new WaitForSeconds(3f);
+
+        playUI.SetActive(true);
+    }
+
+    public void playPuzzle()
+    {
+        playUI.SetActive(false);
+        InvokeRepeating("displayPattern", 1, puzzleSpeed); //Start running through the displaypattern function
+        currentSolveIndex = 0; //Set our puzzle index at 0
     }
 
     void displayPattern()
@@ -141,6 +155,7 @@ public class GameLogic : MonoBehaviour
     public void resetGame()
     {
         restartUI.SetActive(false);
+        chest.SetActive(false);
         startUI.SetActive(true);
         playerWon = false;
         generatePuzzleSequence(); //Generate the puzzle sequence for this playthrough.  
@@ -152,12 +167,13 @@ public class GameLogic : MonoBehaviour
         failAudioHolder.GetComponent<GvrAudioSource>().Play();
         currentSolveIndex = 0;
 
-        startPuzzle();
+        playPuzzle();
 
     }
 
     public void puzzleSuccess()
     { //Do this when the player gets it right
+        orbs.SetActive(false);
         iTween.MoveTo(player,
             iTween.Hash(
                 "position", restartPoint.transform.position,
