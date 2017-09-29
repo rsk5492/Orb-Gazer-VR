@@ -10,7 +10,7 @@ Orb Gazer is mobile VR game which challenges the player's memory through interes
 * Install iTween from the Unity Asset Store.
 * Go to build settings and change the target to Android/IOS.
 * Build the application and save the apk or ipa file.
-* Install the file on your device and Enjoy the VR experience.
+* Install the file on your device and enjoy the VR experience.
 
 ## Preview
 
