@@ -1,5 +1,5 @@
 # Orb Gazer-VR
-Orb Gazer is mobile VR game which challenges the player's memory through interesting "Simon" style puzzle. You can read my story and see my approach on how I built this game [here](https://medium.com/@srinivassai/puzzler-vr-c4481b12bd02).
+Orb Gazer (previously named "Puzzler-VR") is mobile VR game which challenges the player's memory through interesting "Simon" style puzzle. You can read my story and see my approach on how I built this game [here](https://medium.com/@srinivassai/puzzler-vr-c4481b12bd02).
 
 ## How to Build
 
