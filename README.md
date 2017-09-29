@@ -12,6 +12,10 @@ Orb Gazer (previously named "Puzzler-VR") is mobile VR game which challenges the
 * Build the application and save the apk or ipa file.
 * Install the file on your device and enjoy the VR experience.
 
+## Install the APK
+
+You can either build your own apk using the process mentioned above or you can use the apk provided and install it.
+
 ## Preview
 
 You can check out the gameplay [here](https://www.youtube.com/watch?v=Fa8gR4qqHNo)
